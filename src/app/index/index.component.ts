@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {ContractService} from "../service/contract.service";
 
 @Component({
   selector: 'app-index',
@@ -10,17 +11,18 @@ export class IndexComponent implements OnInit {
 
   taskForm!: FormGroup;
 
-  constructor() { }
+  constructor(private contractService: ContractService) {
+  }
 
   ngOnInit(): void {
-
     this.taskForm = new FormGroup({
       task: new FormControl('', [Validators.required, Validators.minLength(3)])
     });
+
+    this.contractService.getData().then();
   }
 
   get task() {
-
     return this.taskForm.get('task');
   }
 
