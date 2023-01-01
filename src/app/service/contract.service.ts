@@ -36,9 +36,9 @@ export class ContractService {
     return await this.contract.methods.getData().call();
   }
 
-  async sendData(){
+  async sendData(data: number){
 
-    const response = this.contract.methods.setData(10).send({
+    const response = this.contract.methods.setData(data).send({
       from: this.accounts[0]
     });
 

@@ -12,8 +12,18 @@
       <div class="col-md-12 d-flex justify-content-center">
         <form [formGroup]="taskForm" class="row g-3">
           <div class="input-group mb-3">
-            <input type="text" id="task" formControlName="task" name="task" class="form-control" placeholder="Task" aria-label="Task" aria-describedby="button-task" />
-            <button class="btn btn-success" type="button" id="task-button" (click)="onSubmit()">Task</button>
+            <input type="text"
+                   id="task"
+                   formControlName="task"
+                   name="task"
+                   class="form-control"
+                   placeholder="Task"
+                   aria-label="Task"
+                   aria-describedby="button-task" />
+            <button class="btn btn-success"
+                    type="button"
+                    id="task-button"
+                    (click)="onSubmit()">Vote</button>
           </div>
         </form>
       </div>

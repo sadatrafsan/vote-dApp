@@ -18,11 +18,6 @@ export class IndexComponent implements OnInit {
     this.taskForm = new FormGroup({
       task: new FormControl('', [Validators.required, Validators.minLength(3)])
     });
-
-
-    this.contractService.getData().then((result) => {
-      console.log(result);
-    });
   }
 
 
@@ -32,11 +27,15 @@ export class IndexComponent implements OnInit {
 
   onSubmit(){
 
-    //console.log(this.task?.value);
+    this.contractService.sendData(this.task?.value).then((result) => {
 
-    this.contractService.sendData().then((result) => {
       console.log(result);
+
+      this.contractService.getData().then((result) => {
+        console.log(result);
+      });
     });
+
 
   }
 }
