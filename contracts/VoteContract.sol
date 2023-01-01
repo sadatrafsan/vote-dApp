@@ -14,6 +14,6 @@ contract VoteContract{
   }
 
   function incrementData(uint _data) private {
-    data = _data + 1;
+    data = _data + 10;
   }
 }

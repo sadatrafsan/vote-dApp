@@ -19,15 +19,24 @@ export class IndexComponent implements OnInit {
       task: new FormControl('', [Validators.required, Validators.minLength(3)])
     });
 
-    this.contractService.getData().then();
+
+    this.contractService.getData().then((result) => {
+      console.log(result);
+    });
   }
+
 
   get task() {
     return this.taskForm.get('task');
   }
 
   onSubmit(){
-    console.log(this.task?.value);
+
+    //console.log(this.task?.value);
+
+    this.contractService.sendData().then((result) => {
+      console.log(result);
+    });
 
   }
 }

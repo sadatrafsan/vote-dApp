@@ -29,9 +29,9 @@
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.8.17+commit.8df45f5f\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"getData\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_data\",\"type\":\"uint256\"}],\"name\":\"setData\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/VoteContract.sol\":\"VoteContract\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/VoteContract.sol\":{\"keccak256\":\"0x979ea453bdefb311f7ba2117364a3c68e31e567105e37f524e2619625be81abd\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://1b5cc7c4e8f7db3dfd7f6cc75383b32213c73c13936d66f3e5df8ac1f5bf4442\",\"dweb:/ipfs/Qmc9vDXkdxFkKRrq2htzutJoRpW6b6uzHY4dGEPUEfof1Z\"]}},\"version\":1}",
-  "bytecode": "0x6080604052348015600f57600080fd5b5060ac8061001e6000396000f3fe6080604052348015600f57600080fd5b506004361060325760003560e01c80633bc5de301460375780635b4b73a914604c575b600080fd5b60005460405190815260200160405180910390f35b605c6057366004605e565b600055565b005b600060208284031215606f57600080fd5b503591905056fea264697066735822122062397153f82bf632893e94f7395c80911e3cf1e71fa8bb9759b10db539fe110c64736f6c63430008110033",
-  "deployedBytecode": "0x6080604052348015600f57600080fd5b506004361060325760003560e01c80633bc5de301460375780635b4b73a914604c575b600080fd5b60005460405190815260200160405180910390f35b605c6057366004605e565b600055565b005b600060208284031215606f57600080fd5b503591905056fea264697066735822122062397153f82bf632893e94f7395c80911e3cf1e71fa8bb9759b10db539fe110c64736f6c63430008110033",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.17+commit.8df45f5f\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"getData\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_data\",\"type\":\"uint256\"}],\"name\":\"setData\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/VoteContract.sol\":\"VoteContract\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/VoteContract.sol\":{\"keccak256\":\"0x1ae0dd253ec2b4c5a5d52f76e6739bf3592cec93f99b67509a68601b3fef6857\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://057e3a84d55750da9e0bba61d0f028a5c65d43985a1acd84045fb65993e475f9\",\"dweb:/ipfs/QmNoMsJxEfB4fNvM2Gze7LAHZJaWk8vV4FnX4Tdw1RvFDC\"]}},\"version\":1}",
+  "bytecode": "0x6080604052348015600f57600080fd5b5060ac8061001e6000396000f3fe6080604052348015600f57600080fd5b506004361060325760003560e01c80633bc5de301460375780635b4b73a914604c575b600080fd5b60005460405190815260200160405180910390f35b605c6057366004605e565b600055565b005b600060208284031215606f57600080fd5b503591905056fea264697066735822122005fee19f867d5b50dc86052501a03bc01781dd508d6125bcce26960021ffdf7964736f6c63430008110033",
+  "deployedBytecode": "0x6080604052348015600f57600080fd5b506004361060325760003560e01c80633bc5de301460375780635b4b73a914604c575b600080fd5b60005460405190815260200160405180910390f35b605c6057366004605e565b600055565b005b600060208284031215606f57600080fd5b503591905056fea264697066735822122005fee19f867d5b50dc86052501a03bc01781dd508d6125bcce26960021ffdf7964736f6c63430008110033",
   "immutableReferences": {},
   "generatedSources": [],
   "deployedGeneratedSources": [
@@ -283,9 +283,9 @@
       "name": "#utility.yul"
     }
   ],
-  "sourceMap": "63:264:0:-:0;;;;;;;;;;;;;;;;;;;",
-  "deployedSourceMap": "63:264:0:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;107:70;148:4;167;107:70;;160:25:1;;;148:2;133:18;107:70:0;;;;;;;183:63;;;;;;:::i;:::-;228:4;:12;183:63;;;196:180:1;255:6;308:2;296:9;287:7;283:23;279:32;276:52;;;324:1;321;314:12;276:52;-1:-1:-1;347:23:1;;196:180;-1:-1:-1;196:180:1:o",
-  "source": "//SPDX-License-Identifier: GPL-3.0\r\npragma solidity ^0.8.7;\r\n\r\ncontract VoteContract{\r\n\r\n  uint data;\r\n\r\n  function getData() external view returns(uint){\r\n    return data;\r\n  }\r\n\r\n  function setData(uint _data) external {\r\n    data = _data;\r\n  }\r\n\r\n  function incrementData(uint _data) private {\r\n    data = _data + 1;\r\n  }\r\n}\r\n",
+  "sourceMap": "63:265:0:-:0;;;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "63:265:0:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;107:70;148:4;167;107:70;;160:25:1;;;148:2;133:18;107:70:0;;;;;;;183:63;;;;;;:::i;:::-;228:4;:12;183:63;;;196:180:1;255:6;308:2;296:9;287:7;283:23;279:32;276:52;;;324:1;321;314:12;276:52;-1:-1:-1;347:23:1;;196:180;-1:-1:-1;196:180:1:o",
+  "source": "//SPDX-License-Identifier: GPL-3.0\r\npragma solidity ^0.8.7;\r\n\r\ncontract VoteContract{\r\n\r\n  uint data;\r\n\r\n  function getData() external view returns(uint){\r\n    return data;\r\n  }\r\n\r\n  function setData(uint _data) external {\r\n    data = _data;\r\n  }\r\n\r\n  function incrementData(uint _data) private {\r\n    data = _data + 10;\r\n  }\r\n}\r\n",
   "sourcePath": "D:\\vote\\client\\contracts\\VoteContract.sol",
   "ast": {
     "absolutePath": "project:/contracts/VoteContract.sol",
@@ -540,7 +540,7 @@
             "body": {
               "id": 32,
               "nodeType": "Block",
-              "src": "295:29:0",
+              "src": "295:30:0",
               "statements": [
                 {
                   "expression": {
@@ -588,7 +588,7 @@
                       "nodeType": "BinaryOperation",
                       "operator": "+",
                       "rightExpression": {
-                        "hexValue": "31",
+                        "hexValue": "3130",
                         "id": 28,
                         "isConstant": false,
                         "isLValue": false,
@@ -596,20 +596,20 @@
                         "kind": "number",
                         "lValueRequested": false,
                         "nodeType": "Literal",
-                        "src": "317:1:0",
+                        "src": "317:2:0",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_rational_1_by_1",
-                          "typeString": "int_const 1"
+                          "typeIdentifier": "t_rational_10_by_1",
+                          "typeString": "int_const 10"
                         },
-                        "value": "1"
+                        "value": "10"
                       },
-                      "src": "309:9:0",
+                      "src": "309:10:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       }
                     },
-                    "src": "302:16:0",
+                    "src": "302:17:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -617,7 +617,7 @@
                   },
                   "id": 31,
                   "nodeType": "ExpressionStatement",
-                  "src": "302:16:0"
+                  "src": "302:17:0"
                 }
               ]
             },
@@ -669,18 +669,18 @@
               "src": "295:0:0"
             },
             "scope": 34,
-            "src": "252:72:0",
+            "src": "252:73:0",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "private"
           }
         ],
         "scope": 35,
-        "src": "63:264:0",
+        "src": "63:265:0",
         "usedErrors": []
       }
     ],
-    "src": "36:293:0"
+    "src": "36:294:0"
   },
   "compiler": {
     "name": "solc",
@@ -735,12 +735,12 @@
         }
       },
       "links": {},
-      "address": "0xD671da7F12671c4dD885B20582826f09C1dd2190",
-      "transactionHash": "0x5e17bcc3836e7a981564a9e90c66b66417150487fdcb4f5462b515815932f556"
+      "address": "0x689B7C9aa1E6C20b85230f02848E133337B833E7",
+      "transactionHash": "0x0615747de23df64ecf6267ef2f5d314a03da5683d5b50b8d0004cf402c8786a8"
     }
   },
   "schemaVersion": "3.4.11",
-  "updatedAt": "2022-12-30T20:19:53.996Z",
+  "updatedAt": "2023-01-01T05:41:15.301Z",
   "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",
