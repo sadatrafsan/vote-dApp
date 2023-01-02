@@ -31,14 +31,14 @@ export class ContractService {
     });
   }
 
-  async getData(){
+  async getResults(){
 
-    return await this.contract.methods.getData().call();
+    return await this.contract.methods.getResults().call();
   }
 
-  async sendData(data: number){
+  async castVote(data: number){
 
-    const response = this.contract.methods.setData(data).send({
+    const response = this.contract.methods.castVote(data).send({
       from: this.accounts[0]
     });
 

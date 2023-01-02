@@ -18,11 +18,11 @@ export class IndexComponent implements OnInit {
   castVote(candidateId: number){
 
 
-    this.contractService.sendData(candidateId).then((result) => {
+    this.contractService.castVote(candidateId).then((result) => {
 
       console.log(result);
 
-      this.contractService.getData().then((result) => {
+      this.contractService.getResults().then((result) => {
         console.log(result);
       });
     });
