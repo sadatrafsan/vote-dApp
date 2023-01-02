@@ -4,7 +4,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <h1 class="mb-5 text-center">Ballot Box</h1>
+        <h1 class="mb-5 text-center">Vote Your Favorite Keanu Movie</h1>
       </div>
     </div>
 
@@ -12,57 +12,62 @@
 
       <div class="col-md-2">
         <div class="card">
-          <div class="card-title text-center">Point Break</div>
-          <div class="card-body">
-            <button class="btn btn-success h-100" (click)="castVote(1)">Vote</button>
+          <img src="https://img.yts.mx/assets/images/movies/point_break_1991/medium-cover.jpg" class="card-img-top" alt="">
+          <div class="card-body text-center">
+            <button class="btn btn-success" (click)="castVote(0)">Vote</button>
           </div>
         </div>
       </div>
 
       <div class="col-md-2">
         <div class="card">
-          <div class="card-title text-center">Speed</div>
-          <div class="card-body">
-            <button class="btn btn-success h-100" (click)="castVote(2)">Vote</button>
+          <img src="https://img.yts.mx/assets/images/movies/Speed_1994/medium-cover.jpg" class="card-img-top" alt="">
+          <div class="card-body text-center">
+            <button class="btn btn-success" (click)="castVote(1)">Vote</button>
           </div>
         </div>
       </div>
 
       <div class="col-md-2">
         <div class="card">
-          <div class="card-title text-center">John Wick</div>
-          <div class="card-body">
-            <button class="btn btn-success h-100" (click)="castVote(3)">Vote</button>
+          <img src="https://img.yts.mx/assets/images/movies/john_wick_2014/medium-cover.jpg" class="card-img-top" alt="">
+          <div class="card-body text-center">
+            <button class="btn btn-success" (click)="castVote(2)">Vote</button>
           </div>
         </div>
       </div>
 
       <div class="col-md-2">
         <div class="card">
-          <div class="card-title text-center">Street King</div>
-          <div class="card-body">
-            <button class="btn btn-success h-100" (click)="castVote(4)">Vote</button>
+          <img src="https://img.yts.mx/assets/images/movies/Street_Kings_2008/medium-cover.jpg" class="card-img-top" alt="">
+          <div class="card-body text-center">
+            <button class="btn btn-success" (click)="castVote(3)">Vote</button>
           </div>
         </div>
       </div>
 
     </div>
 
-    <div class="row">
-      <div class="col-md-12">
+    <div class="row d-flex justify-content-center">
+      <div class="col-md-8">
         <table class="table table-bordered">
-          <thead>
-            <th>Candidates</th>
-            <th>Votes</th>
+          <thead class="bg-dark text-light">
+            <tr class="text-center">
+              <th>#</th>
+              <th>Candidate</th>
+              <th>Votes</th>
+            </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>Name</td>
-              <td>10</td>
+            <tr *ngFor="let row of results">
+              <td>{{row.id}}</td>
+              <td>{{row.candidate}}</td>
+              <td>{{row.vote}}</td>
             </tr>
           </tbody>
         </table>
       </div>
+
     </div>
 
   </div>

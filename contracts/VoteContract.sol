@@ -35,4 +35,5 @@ contract VoteContract{
   function getResults() external view returns(Ballot[] memory){
     return ballots;
   }
+
 }

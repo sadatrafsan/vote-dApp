@@ -8,7 +8,7 @@ import {ContractService} from "../service/contract.service";
 })
 export class IndexComponent implements OnInit {
 
-  private results: any;
+  results: any;
 
   constructor(private contractService: ContractService) {
   }
@@ -19,15 +19,11 @@ export class IndexComponent implements OnInit {
 
   castVote(candidateId: number){
 
-
     this.contractService.castVote(candidateId).then(() => {
-
       this.contractService.getResults().then((response) => {
         this.results = response;
-        console.log(response);
       });
     });
-
-
   }
+
 }
