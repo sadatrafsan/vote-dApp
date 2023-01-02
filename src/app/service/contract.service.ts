@@ -18,7 +18,7 @@ export class ContractService {
 
     this.web3.eth.getAccounts().then(param => {
       this.accounts = param;
-      console.log('Account[0]: ' + this.accounts[0]);
+      //console.log('Account[0]: ' + this.accounts[0]);
     });
 
     this.web3.eth.net.getId().then(param => {
