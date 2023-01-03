@@ -9,8 +9,10 @@ import {ContractService} from "../service/contract.service";
 export class IndexComponent implements OnInit {
 
   results: any;
+  accounts: any;
 
   constructor(private contractService: ContractService) {
+
   }
 
   ngOnInit(): void {
@@ -25,5 +27,4 @@ export class IndexComponent implements OnInit {
       });
     });
   }
-
 }
