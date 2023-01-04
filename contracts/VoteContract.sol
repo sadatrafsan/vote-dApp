@@ -11,6 +11,7 @@ contract VoteContract{
 
   Ballot private ballot;
   Ballot[] private ballots;
+  address[] private addresses;
 
   constructor(){
 
@@ -27,13 +28,34 @@ contract VoteContract{
     ballots.push(ballot);
   }
 
-  function castVote(uint _data) external {
-    uint candidateId = _data;
+  function castVote(uint candidateId) external returns (bool) {
+
+    if(checkAddress(msg.sender)){
+      return false;
+    }
+
+    addresses.push(msg.sender);
+
     ballots[candidateId].vote++;
+
+    return true;
   }
 
   function getResults() external view returns(Ballot[] memory){
     return ballots;
   }
 
+  function checkAddress(address from) private view returns (bool) {
+
+    if(addresses.length > 0){
+      for(uint i=0; i<addresses.length; i++){
+
+        if(from == addresses[i]){
+          return true;
+        }
+      }
+    }
+
+    return false;
+  }
 }

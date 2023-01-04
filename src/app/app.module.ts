@@ -5,12 +5,16 @@ import { AppComponent } from './app.component';
 import { IndexComponent } from './index/index.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import { VoteComponent } from './vote/vote.component';
+import { ResultComponent } from './result/result.component';
+import { NavigationComponent } from './navigation/navigation.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     IndexComponent,
-    VoteComponent
+    VoteComponent,
+    ResultComponent,
+    NavigationComponent
   ],
   imports: [
     BrowserModule,

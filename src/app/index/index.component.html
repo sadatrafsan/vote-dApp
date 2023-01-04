@@ -1,74 +1,17 @@
-
+<app-navigation></app-navigation>
 <main class="flex-shrink-0">
 
   <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <h1 class="mb-5 text-center">Vote Your Favorite Keanu Movie</h1>
-      </div>
-    </div>
-
-    <div class="row d-flex justify-content-center mb-5">
-
-      <div class="col-md-2">
-        <div class="card">
-          <img src="https://img.yts.mx/assets/images/movies/point_break_1991/medium-cover.jpg" class="card-img-top" alt="">
-          <div class="card-body text-center">
-            <button class="btn btn-success" (click)="castVote(0)">Vote</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-2">
-        <div class="card">
-          <img src="https://img.yts.mx/assets/images/movies/Speed_1994/medium-cover.jpg" class="card-img-top" alt="">
-          <div class="card-body text-center">
-            <button class="btn btn-success" (click)="castVote(1)">Vote</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-2">
-        <div class="card">
-          <img src="https://img.yts.mx/assets/images/movies/john_wick_2014/medium-cover.jpg" class="card-img-top" alt="">
-          <div class="card-body text-center">
-            <button class="btn btn-success" (click)="castVote(2)">Vote</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-2">
-        <div class="card">
-          <img src="https://img.yts.mx/assets/images/movies/Street_Kings_2008/medium-cover.jpg" class="card-img-top" alt="">
-          <div class="card-body text-center">
-            <button class="btn btn-success" (click)="castVote(3)">Vote</button>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
     <div class="row d-flex justify-content-center">
-      <div class="col-md-8">
-        <table class="table table-bordered">
-          <thead class="bg-dark text-light">
-            <tr class="text-center">
-              <th>#</th>
-              <th>Candidate</th>
-              <th>Votes</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let row of results">
-              <td>{{row.id}}</td>
-              <td>{{row.candidate}}</td>
-              <td>{{row.vote}}</td>
-            </tr>
-          </tbody>
-        </table>
+      <h1 class="h1 mb-3 text-center">Token List</h1>
+      <div class="col-md-6">
+        <ul class="list-group text-center">
+          <li class="list-group-item" *ngFor="let address of accounts">
+            <a class="text-decoration-none" routerLink="/vote/{{address}}">{{address}}</a>
+          </li>
+        </ul>
       </div>
-
     </div>
-
   </div>
+
 </main>

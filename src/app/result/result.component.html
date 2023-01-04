@@ -1,0 +1,34 @@
+<app-navigation></app-navigation>
+
+<main>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1 class="mb-5 text-center">Result</h1>
+      </div>
+    </div>
+
+    <div class="row d-flex justify-content-center">
+      <div class="col-md-8">
+        <table class="table table-bordered">
+          <thead class="bg-dark text-light">
+          <tr class="text-center">
+            <th>#</th>
+            <th>Candidate</th>
+            <th>Votes</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let row of results">
+            <td>{{row.id}}</td>
+            <td>{{row.candidate}}</td>
+            <td>{{row.vote}}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+
+</main>

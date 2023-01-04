@@ -17,15 +17,23 @@ export class ContractService {
 
     this.web3 = new Web3(environment.SERVICE_URL);
 
-    this.web3.eth.getAccounts().then(response => {
-      this.accounts = response;
-      console.log('Accounts: ' + this.accounts);
-    });
+    // this.web3.eth.getAccounts().then(response => {
+    //   this.accounts = response;
+    //   console.log('Accounts: ' + this.accounts);
+    // });
 
     this.web3.eth.net.getId().then(response => {
-
       // @ts-ignore
       this.contract = new this.web3.eth.Contract(VoteContract.abi, VoteContract.networks[response].address);
+    });
+  }
+
+  getAccounts(){
+    return new Promise(resolve => {
+      this.web3.eth.getAccounts().then(response => {
+        this.accounts = response;
+        resolve(response);
+      });
     });
   }
 
@@ -34,10 +42,10 @@ export class ContractService {
     return await this.contract.methods.getResults().call();
   }
 
-  async castVote(data: number){
+  async castVote(data: number, address: string){
 
-    this.contract.methods.castVote(data).send({
-      from: this.accounts[0]
+    return this.contract.methods.castVote(data).send({
+      from: address
     });
   }
 }
