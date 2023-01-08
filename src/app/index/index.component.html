@@ -4,7 +4,8 @@
   <div class="container">
     <div class="row d-flex justify-content-center">
       <h1 class="h1 mb-3 text-center">Token List</h1>
-      <div class="col-md-6">
+      <p class="mb-3 text-center">(Please choose a token to vote)</p>
+      <div class="col-lg-6 mb-3">
         <ul class="list-group text-center">
           <li class="list-group-item" *ngFor="let address of accounts">
             <a class="text-decoration-none" routerLink="/vote/{{address}}">{{address}}</a>

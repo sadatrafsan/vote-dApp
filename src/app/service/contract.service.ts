@@ -17,11 +17,6 @@ export class ContractService {
 
     this.web3 = new Web3(environment.SERVICE_URL);
 
-    // this.web3.eth.getAccounts().then(response => {
-    //   this.accounts = response;
-    //   console.log('Accounts: ' + this.accounts);
-    // });
-
     this.web3.eth.net.getId().then(response => {
       // @ts-ignore
       this.contract = new this.web3.eth.Contract(VoteContract.abi, VoteContract.networks[response].address);

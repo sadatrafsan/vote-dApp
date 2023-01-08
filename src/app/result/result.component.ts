@@ -14,7 +14,9 @@ export class ResultComponent implements OnInit {
 
   ngOnInit(): void {
     this.contractService.getResults().then((response) => {
-      this.results = response;
+      if(response.length > 0){
+        this.results = response;
+      }
     });
   }
 

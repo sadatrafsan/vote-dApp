@@ -4,11 +4,12 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <h1 class="mb-5 text-center">Result</h1>
+        <h1 *ngIf="results" class="mb-5 text-center">Result</h1>
+        <h1 *ngIf="!results" class="mb-5 text-center">No Results Found!</h1>
       </div>
     </div>
 
-    <div class="row d-flex justify-content-center">
+    <div *ngIf="results" class="row d-flex justify-content-center">
       <div class="col-md-8">
         <table class="table table-bordered">
           <thead class="bg-dark text-light">

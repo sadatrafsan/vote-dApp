@@ -17,13 +17,26 @@ export class VoteComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
-      this.address = params[`address`];
+
+      if(params[`address`]){
+        this.address = params[`address`];
+      }
+      else{
+        this.router.navigate(['']);
+      }
     });
   }
 
   castVote(candidateId: number){
-    this.contractService.castVote(candidateId, this.address).then((res) => {
-      this.router.navigate(['/result']);
-    });
+
+    if(this.address){
+      this.contractService.castVote(candidateId, this.address).then((res) => {
+        console.log(res);
+        this.router.navigate(['/result']);
+      });
+    }
+    else{
+
+    }
   }
 }
