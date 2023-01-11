@@ -31,7 +31,6 @@ export class VoteComponent implements OnInit {
 
     if(this.address){
       this.contractService.castVote(candidateId, this.address).then((res) => {
-        console.log(res);
         this.router.navigate(['/result']);
       });
     }

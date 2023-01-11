@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ContractService} from "../service/contract.service";
 
+
 @Component({
   selector: 'app-index',
   templateUrl: './index.component.html',
@@ -8,16 +9,15 @@ import {ContractService} from "../service/contract.service";
 })
 export class IndexComponent implements OnInit {
 
-  accounts: any;
+  account: any;
 
   constructor(private contractService: ContractService) {
-
   }
 
   ngOnInit(): void {
 
-    this.contractService.getAccounts().then(res => {
-      this.accounts = res;
+    this.contractService.getAccount().then(res => {
+      this.account = res;
     });
   }
 }
