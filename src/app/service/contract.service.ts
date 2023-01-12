@@ -17,13 +17,6 @@ export class ContractService {
 
   constructor() {
 
-    if (window.ethereum) {
-      window.ethereum.enable();
-    }
-    else{
-      alert('MetaMask not supported!');
-    }
-
     this.web3 = new Web3(environment.SERVICE_URL);
     this.web3.eth.net.getId().then(response => {
       // @ts-ignore
